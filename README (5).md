@@ -199,7 +199,9 @@ Salin kode
 scaler = MinMaxScaler()
 scaler.fit(x_train)
 x_train = scaler.transform(x_train)
-x_test = scaler.transform(x_test) ```
+x_test = scaler.transform(x_test)
+
+ ```
 
 Dengan normalisasi ini, seluruh fitur telah diubah ke dalam skala yang seragam, sehingga siap untuk digunakan dalam model prediksi.
 
@@ -217,8 +219,6 @@ Setelah melakukan transformasi pada kolom **Quality**, data fitur dan label dipi
 Dengan demikian, kita mendapatkan dimensi data fitur dan label:
 
 Ini akan memberikan informasi tentang ukuran dataset yang digunakan dalam proyek.
-
-
 
 ### Train-Test-Split
 
@@ -269,7 +269,7 @@ Kerugian _Random Forest_ :
 - Membutuhkan banyak waktu komputasi untuk pelatihan. 
 - Sulit untuk diinterpretasikan.
 
- _Support Vector Machine (SVM)_ adalah algoritma machine learning yang digunakan untuk klasifikasi dan regresi. Algoritma ini bekerja dengan mencari hyperplane yang memisahkan data menjadi dua kelas dengan margin terbesar. Parameter yang digunakan pada SVM kali ini adalah parameter bawaan.
+ Support Vector Machine (SVM)_ adalah algoritma machine learning yang digunakan untuk klasifikasi dan regresi. Algoritma ini bekerja dengan mencari hyperplane yang memisahkan data menjadi dua kelas dengan margin terbesar. Parameter yang digunakan pada SVM kali ini adalah parameter bawaan.
  
  Keuntungan  _Support Vector Machine (SVM)_ :
 - Memiliki akurasi prediksi yang tinggi.
@@ -314,8 +314,10 @@ Parameter yang digunakan adalah:
 
 Dalam tahap evaluasi, metrik yang digunakan adalah `accuracy`
 Accuracy didapatkan dengan menghitung persentase dari jumlah prediksi yang benar dibagi dengan jumlah seluruh prediksi. Rumus:
-
+ ```
 $$\text{Accuracy} = \frac{\text{TP + TN}}{\text{TN + TP + FN + FP}} \times 100\%$$
+
+ ```
 
 *Penjelasan*
 - TP (True Positive): Jumlah data positif yang diprediksi dengan benar sebagai positif.
@@ -326,6 +328,7 @@ $$\text{Accuracy} = \frac{\text{TP + TN}}{\text{TN + TP + FN + FP}} \times 100\%
 Rumus ini memecah akurasi menjadi rasio antara data yang diklasifikasikan dengan benar (TP dan TN) dengan jumlah total data. Mengalikan dengan 100% mengubah rasio menjadi persentase.
 
 Berikut hasil accuracy 5 buah model yang latih:
+ ```
 
 | Model | Accuracy |
 | ------ | ------ |
@@ -334,27 +337,21 @@ Berikut hasil accuracy 5 buah model yang latih:
 | SVM | 0.89 |
 | Naive Bayes | 0.49 |
 | Extra Trees Classifier | 0.90 |
+ ```
 
 
 Tabel 3. Hasil Accuracy
 
 ![3  accuracy](https://github.com/user-attachments/assets/6594740c-d55e-4cbd-91fa-8802161d8f3c)
 
-
-
 Gambar 3. Visualisasi Accuracy Model
 
 Dilihat dari _Tabel 3. Hasil Accuracy_ dan _Gambar 3. Visualisasi Accuracy Model_ tersebut dapat diketahui bahwa model dengan algoritma _KNN_ memiliki Accuracy yang lebih tinggi dengan accuracy `90%` . Untuk itu model tersebut yang akan dipilih untuk digunakan. Diharapkan dengan model yang telah dikembangan dapat memprediksi kualitas apel dengan baik menggunakan _K-Nearest Neighbors (KNN)_. Alasan mengapa metode _KNN_ yang dipilih karena _KNN_ adalah algoritma yang sangat sederhana dibandingkan dengan _Extra Trees Classifier_. Hal ini membuatnya lebih mudah untuk dipahami, diimplementasikan, dan diinterpretasikan. _KNN_ juga tidak memiliki banyak parameter yang perlu dioptimalkan, sehingga lebih mudah untuk digunakan.
 
 
-
-
-
-
-
 ## Referensi
-1. Sarnita Sadya.(2022). Produksi Apel Indonesia Sebanyak 509.544 Ton pada 2021.
 
+1. Sarnita Sadya.(2022). Produksi Apel Indonesia Sebanyak 509.544 Ton pada 2021.
 2. Lomo, Christine P., et al. "Daya Terima Panelist terhadap Kualitas Cider Apel dalam Meningkatkan Nilai Gizi Pangan sebagai Imunitas Tubuh di Pandemi Covid-19." Agrista: Jurnal Ilmiah Mahasiswa Agribisnis UNS, vol. 4, no. 1, 2020, pp. 550-556
 3. Afriansyah, M., Saputra, J., Sa’adati, Y., & Valian Yoga Pudya Ardhana. (2023). Optimasi Algoritma Nai?ve Bayes Untuk Klasifikasi Buah Apel Berdasarkan Fitur Warna RGB. Bulletin of Computer Science Research, 3(3), 242-249.
 4. Subramanian, D. (2019). A Simple Introduction to K-Nearest Neighbors Algorithm. Towards Data Science. https://towardsdatascience.com/a-simple-introduction-to-k-nearest-neighbors-algorithm-b3519ed98e
@@ -362,5 +359,3 @@ Dilihat dari _Tabel 3. Hasil Accuracy_ dan _Gambar 3. Visualisasi Accuracy Model
 6. Gandhi, R. (2018). Support Vector Machine — Introduction to Machine Learning Algorithms: SVM model from scratch. Towards Data Science. https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47
 7. Gandhi, R. (2018). Naive Bayes Classifier. Towards Data Science. https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c
 8. Jason Brownlee. (2021). How to Develop an Extra Trees Ensemble with Python. https://machinelearningmastery.com/extra-trees-ensemble-with-python/
-
-_
