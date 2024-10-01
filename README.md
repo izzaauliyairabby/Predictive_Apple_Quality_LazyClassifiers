@@ -6,6 +6,27 @@ Dataset ini berisi informasi penting untuk membangun model prediksi kualitas ape
 - **Jenis Data**: Primer
 - **Asal Data**: Perusahaan pertanian di Amerika Serikat
 
+  Tabel 1. EDA Deskripsi Variabel
+
+Dilihat dari Tabel 1. EDA Deskripsi Variabel dataset ini telah di bersihkan dan normalisasi terlebih dahulu oleh pembuat, sehingga mudah digunakan dan ramah bagi pemula.
+
+- Dataset berupa CSV (Comma-Seperated Values).
+- Dataset memiliki 4001 sample dengan 9 fitur.
+- Dataset memiliki 7 fitur bertipe float64 dan 2 fitur bertipe object.
+- Terdapat 1 missing value dalam dataset.
+- Variable - variable pada dataset
+- A_id : Identifikasi unik untuk setiap buah.
+- Size : Ukuran buah.
+- Weight : Berat buah.
+- Sweetness : Tingkat kemanisan buah.
+- Crunchiness : Tekstur yang menunjukkan kerenyahan buah.
+- Juiciness : Tingkat kesegaran buah.
+- Ripeness : Tahap kematangan buah.
+- Acidity : Tingkat keasaman buah.
+- Quality : Kualitas buah secara keseluruhan, baik atau buruk.
+- 
+Dari ke 9 fitur dapat dilihat bahwa fitur A_id tidak mempengaruhi kualitas buah hingga akan di hapus.
+
 Dataset ini mencakup data sensorik (seperti rasa, kerenyahan, dan kadar air) dan data visual (seperti ukuran dan warna) yang dapat digunakan untuk memprediksi kualitas apel.
 
 ### Tabel Deskriptif
@@ -48,9 +69,8 @@ Untuk memprediksi kualitas apel, beberapa model machine learning digunakan dan d
 
 ### Evaluasi Model
 Metrik utama yang digunakan untuk mengevaluasi model adalah **akurasi**. Akurasi dihitung dengan rumus berikut:
-\[
-Akurasi = \frac{\text{Jumlah prediksi benar}}{\text{Total prediksi}} \times 100
-\]
+
+![akurasi](https://github.com/user-attachments/assets/8601ce1f-5c0e-4ab5-b7bb-78560b972bcb)
 
 #### Hasil Perbandingan Model
 Berdasarkan hasil evaluasi, model **Random Forest** dan **Extra Trees Classifier** menunjukkan akurasi yang tertinggi dalam memprediksi kualitas apel. Keduanya unggul karena kemampuan menangani kompleksitas data dan menghasilkan prediksi yang lebih akurat melalui penggabungan banyak pohon keputusan.
