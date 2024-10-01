@@ -58,6 +58,56 @@ Data yang digunakan dalam pembuatan model merupakan data primer, data ini didapa
 | 4.0 | 1.364217 |-1.296612 | -0.384658 | -0.553006 | 3.030874 | -1.303849	| 0.501984036  |good |
 
 
+Menggunakan fungsi df.info()
+
+<class 'pandas.core.frame.DataFrame'>
+Index: 4000 entries, 0 to 3999
+Data columns (total 8 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   Size         4000 non-null   float64
+ 1   Weight       4000 non-null   float64
+ 2   Sweetness    4000 non-null   float64
+ 3   Crunchiness  4000 non-null   float64
+ 4   Juiciness    4000 non-null   float64
+ 5   Ripeness     4000 non-null   float64
+ 6   Acidity      4000 non-null   float64
+ 7   Quality      4000 non-null   object 
+dtypes: float64(7), object(1)
+memory usage: 281.2+ KB
+Dapat kita lihat:
+
+Pada proses _Data Preparation_ dilakukan kegiatan seperti _Data Gathering_, _Data Assessing_, dan _Data Cleaning_. Pada proses Data Gathering, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan dataframe Pandas. Untuk proses Data Assessing, berikut adalah beberapa pengecekan yang dilakukan:
+- Duplicate data (data yang serupa dengan data lainnya).
+- Missing value (data atau informasi yang "hilang" atau tidak tersedia)
+- Outlier (data yang menyimpang dari rata-rata sekumpulan data yang ada).
+
+Pada proses _Data Cleaning_ yang dilakukan adalah seperti:
+- Converting Column Type (Mengubah tipe suatu kolom).
+- Train Test Split (membagi data menjadi data latih dan data uji).
+- Normalization (mentransformasi data ke dalam skala yang seragam sehingga semua fitur atau atribut memiliki rentang nilai yang sebanding).
+
+| A_id | Size | Weight | Sweetness | Crunchiness | Juiciness | Ripeness | Acidity | Quality |
+| ------ | ------ |------ | ------ | ------ | ------ |------ | ------ |------ |
+| NaN | NaN | NaN | NaN |NaN | NaN| NaN	| Created_by_Nidula_Elgiriyewithana  | NaN |
+
+
+Tabel 2. Melihat data missing value
+
+Pada proyek kasus ini tidak ditemukannya data duplikat, tetapi ditemukannya _missing value_. Adapaun metode yang digunakan untuk mengatasi hal ini adalah dengan menerapkan _Dropping_ yaitu menghapus data yang _missing_ digunakannya metode ini dikarenakan jumlah missing value hanya berjumlah `1`. Lihat _Tabel 2. Melihat data missing value_. Adapun untuk _outlier_ juga dilakukan dengan metode _dropping_ menggunakan metode IQR.  IQR dihitung dengan mengurangkan kuartil ketiga (Q3) dari kuartil pertama (Q1) sebagaimana rumus berikut.
+
+$$IQR = Q_3 - Q_1$$
+
+- Q1 adalah kuartil pertama 
+- Q3 adalah kuartil ketiga.
+
+Setelah menggunakan metode IQR untuk menghilangkan _outlier_ pada dataset jumlah dataset menjadi `3790` yang awalnya adalah `4000`.
+
+Pada proyek ini digunakan _Train Test Split_ pada library  *sklearn.model_selection* untuk membagi dataset menjadi data latih dan data uji dengan pembagian sebesar 20:80 dan random state sebesar 60. Pada proyek kasus ini digunakan _Normalization_ pada library _sklearn.preprocessing.MinMaxScaler_ untuk menormalisasi dataset. Semua proses ini diperlukan dalam rangka membuat model yang baik.
+
+Jumlah Datasets setalah kita hapus Outlier: 3758, 8
+
+
 Tabel 1. EDA Deskripsi Variabel
 
 Dilihat dari _Tabel 1. EDA Deskripsi Variabel_ dataset ini telah di *bersihkan* dan *normalisasi* terlebih dahulu oleh pembuat, sehingga mudah digunakan dan ramah bagi pemula. 
@@ -104,8 +154,6 @@ Gambar 1b. Analisis Univariat (Data Numerik)
 Pada kasus ini, rata-rata (mean) data "Size" adalah -0.51 dan standar deviasi data "Size" tidak diketahui. Namun, dengan nilai minimum -2 dan maksimum 2, dapat diasumsikan bahwa data "Size" telah diubah skalanya sehingga memiliki mean 0 dan standar deviasi 1. Data numerik lainnya, seperti _"Weight", "Sweetness", "Crunchiness", "Juiciness", "Ripeness", dan "Acidity"_, juga telah dinormalisasi dengan cara yang sama.
 
 
- 
-
 ### EDA - Multivariate Analysis
 
 ![Multivariate Analysis](https://i.ibb.co/yNHmpNZ/EDA-MULTIVARIATE.png)
@@ -120,33 +168,49 @@ Gambar 2b. Analisis Matriks Korelasi
 
 Pada _Gambar 2a. Analisis Multivariat_, dengan menggunakan fungsi _pairplot_ dari _library seaborn_, tampak terlihat relasi pasangan dalam dataset menunjukan pola acak. Pada pola sebaran data grafik pairplot, terterlihat bahwa _Size_ dan _Sweetness_ memiliki korelasi negatif menurun, yang mana semakin kecil ukuran buah rasa nya akan semakin manis.
 Pada _Gambar 2b. Analisis Matriks Korelasi_, merupakan _Correlation Matrix_ menunjukkan hubungan antar fitur dalam nilai korelasi. Jika diamati, fitur _Juiciness_ memiliki skor korelasi yang cukup besar `0.24` dengan fitur target _Acidity_ .
+
 ## Data Preparation
-Pada proses _Data Preparation_ dilakukan kegiatan seperti _Data Gathering_, _Data Assessing_, dan _Data Cleaning_. Pada proses Data Gathering, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan dataframe Pandas. Untuk proses Data Assessing, berikut adalah beberapa pengecekan yang dilakukan:
-- Duplicate data (data yang serupa dengan data lainnya).
-- Missing value (data atau informasi yang "hilang" atau tidak tersedia)
-- Outlier (data yang menyimpang dari rata-rata sekumpulan data yang ada).
+Berikut adalah penjelasan yang lebih holistik mengenai proses _data cleaning_, _train-test split_, dan _normalisasi_ dalam proyek ini. Penjelasan ini cocok untuk disertakan dalam file **Markdown (MD)** dengan struktur yang terorganisir.
 
-Pada proses _Data Cleaning_ yang dilakukan adalah seperti:
-- Converting Column Type (Mengubah tipe suatu kolom).
-- Train Test Split (membagi data menjadi data latih dan data uji).
-- Normalization (mentransformasi data ke dalam skala yang seragam sehingga semua fitur atau atribut memiliki rentang nilai yang sebanding).
+---
 
-| A_id | Size | Weight | Sweetness | Crunchiness | Juiciness | Ripeness | Acidity | Quality |
-| ------ | ------ |------ | ------ | ------ | ------ |------ | ------ |------ |
-| NaN | NaN | NaN | NaN |NaN | NaN| NaN	| Created_by_Nidula_Elgiriyewithana  | NaN |
+### Data Cleaning
 
+Pada tahap **data cleaning**, kita melakukan beberapa proses penting untuk mempersiapkan data agar dapat digunakan dalam model machine learning. Salah satu langkah utamanya adalah mengubah kolom **Quality** yang awalnya berupa nilai kategori menjadi format numerik biner.
 
-Tabel 2. Melihat data missing value
+- **Transformasi Label**: Kolom **Quality** yang awalnya berisi dua kategori, yaitu "good" dan "bad", diubah menjadi nilai biner, di mana **"good"** diberi nilai **1** dan **"bad"** diberi nilai **0**. Transformasi ini sangat penting untuk model machine learning, khususnya pada masalah klasifikasi, agar dapat memahami dan memproses data target dengan lebih baik.
 
-Pada proyek kasus ini tidak ditemukannya data duplikat, tetapi ditemukannya _missing value_. Adapaun metode yang digunakan untuk mengatasi hal ini adalah dengan menerapkan _Dropping_ yaitu menghapus data yang _missing_ digunakannya metode ini dikarenakan jumlah missing value hanya berjumlah `1`. Lihat _Tabel 2. Melihat data missing value_. Adapun untuk _outlier_ juga dilakukan dengan metode _dropping_ menggunakan metode IQR.  IQR dihitung dengan mengurangkan kuartil ketiga (Q3) dari kuartil pertama (Q1) sebagaimana rumus berikut.
+Setelah melakukan transformasi pada kolom **Quality**, data fitur dan label dipisahkan:
 
-$$IQR = Q_3 - Q_1$$
+- **Fitur (X)**: Kolom **Quality** dihapus dari data fitur (X), karena ini adalah target yang akan diprediksi.
+- **Label (y)**: Label atau target prediksi adalah kolom **Quality** yang telah diubah menjadi nilai biner.
 
-- Q1 adalah kuartil pertama 
-- Q3 adalah kuartil ketiga.
+Dengan demikian, kita mendapatkan dimensi data fitur dan label:
 
-Setelah menggunakan metode IQR untuk menghilangkan _outlier_ pada dataset jumlah dataset menjadi `3790` yang awalnya adalah `4000`.
-Pada proyek ini digunakan _Train Test Split_ pada library  *sklearn.model_selection* untuk membagi dataset menjadi data latih dan data uji dengan pembagian sebesar 20:80 dan random state sebesar 60. Pada proyek kasus ini digunakan _Normalization_ pada library _sklearn.preprocessing.MinMaxScaler_ untuk menormalisasi dataset. Semua proses ini diperlukan dalam rangka membuat model yang baik.
+Ini akan memberikan informasi tentang ukuran dataset yang digunakan dalam proyek.
+
+---
+
+### Train-Test-Split
+
+Tahap berikutnya adalah **Train-Test Split**, di mana dataset dibagi menjadi dua bagian: data latih dan data uji. Pembagian ini penting agar kita bisa melatih model dengan data latih dan menguji performanya dengan data yang belum pernah dilihat sebelumnya, yaitu data uji.
+
+- **Data Latih (Training Data)**: Digunakan untuk melatih model, yaitu sebanyak **80%** dari total dataset.
+- **Data Uji (Testing Data)**: Digunakan untuk menguji kinerja model, yaitu sebanyak **20%** dari total dataset.
+- **Random State**: Angka **60** digunakan untuk memastikan pembagian dataset bersifat deterministik sehingga dapat direproduksi.
+
+### Normalisasi
+
+Setelah membagi data, langkah selanjutnya adalah **Normalisasi**. Normalisasi bertujuan untuk mengubah rentang fitur agar berada dalam skala yang sama, sehingga model machine learning dapat belajar lebih baik. Pada proyek ini, normalisasi dilakukan menggunakan **MinMaxScaler** dari library Scikit-learn.
+
+- **MinMaxScaler**: Digunakan untuk mereskalakan nilai fitur antara rentang **0** dan **1**.
+- **fit()**: Fungsi ini mempelajari distribusi data latih dan menentukan skala normalisasi yang akan diterapkan.
+- **transform()**: Setelah skala ditentukan, data latih dan data uji diubah atau ditransformasi ke dalam skala tersebut. Penting untuk dicatat bahwa kita hanya **fit** pada data latih, kemudian menerapkan hasil skala tersebut baik pada data latih maupun data uji.
+
+Normalisasi ini penting untuk memastikan bahwa setiap fitur memiliki kontribusi yang seimbang saat digunakan oleh algoritma machine learning, terutama jika terdapat perbedaan skala yang signifikan antar fitur.
+
+Penjelasan ini memberikan gambaran holistik mengenai tiga tahap kunci dalam persiapan data sebelum memasuki proses pelatihan model.
+
 ## Modeling
 Algoritma pada proyek ini melakukan pemodelan dengan 5 algoritma, yaitu:
 
