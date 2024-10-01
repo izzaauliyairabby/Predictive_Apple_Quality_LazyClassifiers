@@ -3,32 +3,51 @@
 Domain yang dipilih untuk proyek *machine learning* ini adalah **Pertanian**, dengan judul **Predictive Analytics: Kualitas Apel**  
 
 ### Latar Belakang
-Indonesia merupakan salah satu negara penghasil apel terbesar di Asia Tenggara, dengan produksi mencapai 1,2 juta ton per tahun. Apel menjadi komoditas penting bagi petani dan berkontribusi signifikan pada perekonomian nasional.[[1](https://dataindonesia.id/agribisnis-kehutanan/detail/produksi-apel-indonesia-sebanyak-509544-ton-pada-2021)] Salah satu tantangan utama dalam industri apel adalah menjaga kualitas produk. Faktor-faktor seperti ukuran yang kecil, tingkat kematangan, dan kerenyahan dapat mempengaruhi kualitas apel. Penurunan kualitas apel dapat menyebabkan kerugian ekonomi bagi petani dan distributor.[[2](https://hostjournals.com/bulletincsr/article/view/251)] Penerapan _predictive analytics_ dalam industri apel dapat memberikan manfaat bagi petani, distributor, dan konsumen. Petani dapat meningkatkan keuntungan dengan memperbaiki kualitas dan hasil panen apel. Distributor dapat mengurangi kerugian dan meningkatkan efisiensi rantai pasokan. Konsumen akan mendapatkan apel dengan kualitas lebih baik dan harga yang lebih stabil.[[3](https://doi.org/10.47065/bulletincsr.v3i3.251)]
+Indonesia merupakan salah satu produsen apel terbesar di Asia Tenggara, dengan total produksi mencapai 1,2 juta ton per tahun. Komoditas apel memiliki peran penting bagi para petani dan berkontribusi signifikan terhadap perekonomian nasional [[1](https://dataindonesia.id/agribisnis-kehutanan/detail/produksi-apel-indonesia-sebanyak-509544-ton-pada-2021)]. Salah satu tantangan utama dalam sektor ini adalah menjaga kualitas produk. Faktor-faktor seperti ukuran kecil, tingkat kematangan, dan kerenyahan dapat memengaruhi kualitas apel, dan penurunan kualitas tersebut dapat menyebabkan kerugian ekonomi bagi petani serta distributor [[2](https://hostjournals.com/bulletincsr/article/view/251)]. Dengan penerapan _predictive analytics_ di industri apel, petani, distributor, dan konsumen dapat memperoleh berbagai manfaat. Petani dapat meningkatkan pendapatan melalui peningkatan kualitas dan hasil panen, sementara distributor dapat mengurangi kerugian serta meningkatkan efisiensi rantai pasokan. Konsumen juga akan diuntungkan dengan mendapatkan apel berkualitas lebih baik dan harga yang lebih stabil [[3](https://doi.org/10.47065/bulletincsr.v3i3.251)].
 
 ## Business Understanding
-Pengembangan model prediksi kualitas apel memiliki potensi untuk memberikan manfaat signifikan bagi berbagai pihak, seperti petani dan distributor. Model prediktif ini dapat membantu meningkatkan kualitas panen apel, meningkatkan nilai jual, serta memperkuat kepercayaan konsumen. Sebagai contoh, prediksi kualitas apel yang akurat dapat membantu petani dalam proses pemilahan serta menentukan harga jual buah secara lebih tepat di masa mendatang.
+
+Pengembangan model prediksi kualitas apel berpotensi memberikan manfaat besar bagi berbagai pemangku kepentingan, seperti petani dan distributor. Model prediktif ini dapat membantu dalam meningkatkan kualitas hasil panen, menaikkan nilai jual apel, serta memperkuat kepercayaan konsumen. Sebagai ilustrasi, prediksi kualitas apel yang akurat akan mempermudah petani dalam proses pemilahan dan memungkinkan penentuan harga jual yang lebih tepat di masa depan.
 
 ### Problem Statements
-Berdasarkan latar belakang di atas, berikut adalah masalah-masalah yang dapat diselesaikan oleh proyek ini:
-- Bagaimana cara membangun model machine learning yang mampu memprediksi kualitas apel berdasarkan data visual dan sensorik?
-- Model machine learning seperti apa yang memiliki akurasi terbaik dalam memprediksi kualitas apel?
-- Bagaimana model ini dapat membantu petani dan distributor dalam meningkatkan kualitas serta nilai jual apel?
+Berdasarkan latar belakang yang telah dijelaskan, berikut adalah beberapa masalah yang dapat diselesaikan oleh proyek ini:
+
+Bagaimana cara membangun model machine learning yang mampu memprediksi kualitas apel berdasarkan data visual dan sensorik?
+Masalah ini mengarah pada pengembangan model yang menggunakan kombinasi data visual (seperti warna dan tekstur) serta data sensorik (seperti rasa, kerenyahan, dan kadar air) untuk memprediksi kualitas apel.
+
+Model machine learning seperti apa yang memiliki akurasi terbaik dalam memprediksi kualitas apel?
+Di sini, fokusnya adalah membandingkan berbagai algoritma machine learning untuk menemukan model yang memberikan akurasi terbaik, dengan mempertimbangkan metrik evaluasi seperti akurasi, presisi, dan recall.
+
+Bagaimana model ini dapat membantu petani dan distributor dalam meningkatkan kualitas serta nilai jual apel?
+Masalah ini menyasar pada aplikasi praktis dari model, yaitu bagaimana prediksi kualitas yang lebih akurat dapat mendukung proses pengambilan keputusan bagi petani dalam meningkatkan hasil panen, serta membantu distributor dalam manajemen rantai pasokan dan harga jual.
 
 ### Goals
-Tujuan dari proyek ini meliputi:
-- Mengembangkan model machine learning yang dapat memprediksi kualitas apel menggunakan data visual dan sensorik.
-- Membandingkan berbagai algoritma untuk menemukan model dengan akurasi terbaik dalam memprediksi kualitas apel.
-- Mengembangkan aplikasi yang mudah digunakan oleh petani dan distributor, yang memungkinkan mereka memanfaatkan model machine learning untuk memprediksi kualitas apel.
+Tujuan dari proyek ini adalah sebagai berikut:
+
+Mengembangkan model machine learning yang dapat memprediksi kualitas apel menggunakan data visual (seperti warna dan tekstur) serta data sensorik (seperti rasa, tingkat kematangan, dan kadar air) untuk membantu petani dan distributor mengoptimalkan hasil panen.
+Membandingkan berbagai algoritma machine learning guna menemukan model dengan akurasi terbaik dalam memprediksi kualitas apel. Algoritma yang dibandingkan akan mencakup metode seperti Random Forest, Extra Trees Classifier, Support Vector Machine (SVM), dan algoritma lain yang relevan.
+Mengembangkan aplikasi yang mudah digunakan oleh petani dan distributor, yang memanfaatkan model machine learning tersebut untuk memprediksi kualitas apel secara real-time. Aplikasi ini diharapkan mampu memberikan hasil prediksi yang akurat dan membantu pengambilan keputusan terkait panen dan distribusi apel.
 
 ### Solution Statements
-Menganalisis data dengan melakukan univariate analysis dan multivariate analysis. Memahami data juga dapat dilakukan dengan visualisasi. Memahami data dapat membantu untuk mengetahui kolerasi matrix antar fitur dan mendeteksi outlier.
-Melakukan proses data cleaning dan normalisai data agar mendapat prediksi yang baik.
-Membuat beberapa variasi model untuk mendapatkan model yang paling baik dari beberapa model yang telah dibuat untuk prediksi kualitas apel. Diantaranya adalah menggunakan:
-K-Nearest Neighbor (KNN) adalah algoritma sederhana yang mengklasifikasikan data atau kasus baru berdasarkan ukuran kesamaan. Hal ini sebagian besar digunakan untuk mengklasifikasikan titik data berdasarkan tetangga terdekatnya sebagai acuan.[4]
-Random Forest adalah algoritma machine learning yang kuat yang dapat digunakan untuk berbagai tugas termasuk regresi dan klasifikasi. Ini adalah metode ensemble, yang berarti bahwa model random forest terdiri dari banyak decision tree kecil, yang disebut estimator, yang masing-masing menghasilkan prediksi mereka sendiri. Random forest menggabungkan prediksi estimator untuk menghasilkan prediksi yang lebih akurat .[5]
-Support Vector Machine (SVM) adalah algoritma yang digunakan untuk menemukan hyperplane dalam ruang N-dimensi (N - jumlah fitur) yang secara jelas mengklasifikasikan titik data. SVM dapat digunakan untuk menyelesaikan permasalahan klasifikasi, regresi, dan pendeteksian outlier.[6]
-Naive Bayes adalah model machine learning probabilistik yang digunakan untuk tugas klasifikasi. Inti dari classifier ini didasarkan pada teorema Bayes.[7]
-Extra trees classifier adalah sejumlah besar pohon keputusan yang belum dipangkas dari kumpulan data pelatihan. Prediksi dibuat dengan merata-ratakan prediksi pohon keputusan dalam kasus regresi atau menggunakan suara terbanyak dalam kasus klasifikasi.[8]
+Untuk mencapai prediksi kualitas apel yang optimal, beberapa langkah penting dalam analisis data dan modelisasi harus dilakukan:
+
+1. **Analisis Univariate dan Multivariate**: 
+   - **Univariate analysis** membantu memahami distribusi setiap fitur secara individual. Ini meliputi analisis statistik deskriptif (seperti mean, median, dan standar deviasi) dan visualisasi (seperti histogram dan boxplot) untuk mendeteksi pola, tren, dan outlier.
+   - **Multivariate analysis** mengamati hubungan antar beberapa fitur sekaligus. Teknik seperti **korelasi matriks** dapat digunakan untuk melihat hubungan antar variabel. Visualisasi melalui **pair plots** atau **heatmaps** sangat berguna untuk mendeteksi hubungan kuat antara fitur.
+
+2. **Data Cleaning dan Normalisasi**:
+   - **Proses cleaning data** meliputi penghapusan atau imputasi missing values, penanganan outlier, dan menangani data yang tidak konsisten. 
+   - **Normalisasi data** diperlukan agar fitur yang memiliki skala berbeda dapat dibandingkan secara adil dalam algoritma machine learning, khususnya yang sensitif terhadap skala seperti KNN dan SVM.
+
+3. **Pemilihan Model Machine Learning**:
+   Berbagai algoritma machine learning akan dicoba untuk memprediksi kualitas apel, termasuk:
+   - **K-Nearest Neighbor (KNN)**: Algoritma ini mengklasifikasikan data berdasarkan tetangga terdekatnya. KNN bergantung pada metrik jarak dan cocok untuk dataset yang memiliki struktur kelas yang jelas.[[4](#)]
+   - **Random Forest**: Algoritma ensemble yang memanfaatkan banyak decision tree untuk meningkatkan akurasi prediksi. Random Forest terkenal karena kemampuannya untuk menangani dataset dengan banyak fitur dan mengurangi overfitting.[[5](#)]
+   - **Support Vector Machine (SVM)**: Algoritma yang bertujuan untuk menemukan hyperplane optimal untuk memisahkan kelas data dalam ruang multidimensi. SVM dapat digunakan untuk tugas klasifikasi dan regresi, terutama untuk dataset dengan dimensi tinggi.[[6](#)]
+   - **Naive Bayes**: Model probabilistik berdasarkan teorema Bayes, yang digunakan untuk klasifikasi dengan asumsi bahwa fitur bersifat independen satu sama lain. Algoritma ini bekerja baik pada dataset yang memiliki distribusi probabilitas yang jelas.[[7](#)]
+   - **Extra Trees Classifier**: Sebuah varian dari Random Forest yang menggunakan random splitting pada node-nya untuk meningkatkan generalisasi model. Algoritma ini dikenal memiliki kecepatan dan kinerja yang baik pada data klasifikasi yang kompleks.[[8](#)]
+
+Setiap model akan diuji, dan **evaluasi model** akan dilakukan untuk memilih model dengan **akurasi terbaik** dalam memprediksi kualitas apel.
 
 Melalui pendekatan ini, model dengan akurasi terbaik akan dipilih untuk memprediksi kualitas apel dengan lebih efektif.
 
@@ -45,7 +64,7 @@ Melalui pendekatan ini, model dengan akurasi terbaik akan dipilih untuk mempredi
 | **Tags**     | _Computer Science, Education, Food, Data Visualization, Classification, Exploratory Data Analysis_ |
 | **Usability**| 10.00                                                                                        |
 
-Dataset ini berisi informasi yang diperlukan untuk memprediksi kualitas apel berdasarkan berbagai faktor yang relevan. Data tersebut bersumber dari sebuah perusahaan pertanian di Amerika dan telah disediakan secara publik di Kaggle dengan judul "_Apple Quality_". Dataset ini memungkinkan eksplorasi mendalam terkait prediksi kualitas apel menggunakan data visual dan sensorik, yang akan membantu dalam pengembangan model machine learning untuk meningkatkan nilai jual dan kualitas apel.
+Dataset ini berisi informasi penting yang dibutuhkan untuk membangun model prediksi kualitas apel berdasarkan faktor-faktor visual dan sensorik yang relevan. Data tersebut berasal dari sebuah perusahaan pertanian di Amerika Serikat dan telah diunggah secara publik di platform **Kaggle** dengan judul "_Apple Quality_". Dataset ini membuka peluang untuk melakukan eksplorasi mendalam dalam hal pemahaman kualitas apel, serta membantu pengembangan model machine learning yang dapat mendukung petani dan distributor dalam meningkatkan nilai jual dan kualitas apel mereka.
 
 Berikut informasi penting mengenai dataset: 
 
@@ -68,6 +87,9 @@ Dengan memanfaatkan dataset ini, analisis eksploratif serta pengembangan model p
 ### Tabel 1. EDA Deskripsi Variabel & Univariate Analysis
 Dalam proses **Exploratory Data Analysis (EDA)**, kita mengamati bahwa data telah dinormalisasi menggunakan metode _z-score normalization_. Normalisasi ini dilakukan dengan cara:
 
+![1  Univariate](https://github.com/user-attachments/assets/14af8aa3-05b3-4ce7-8742-a635db7cd5e2)
+
+
 - Mengurangi rata-rata (mean) dari setiap data point.
 - Membagi hasil pengurangan tersebut dengan standar deviasi data.
 
@@ -75,8 +97,13 @@ Misalnya, variabel **"Size"** memiliki mean -0.51, tetapi standar deviasi tidak 
 
 ### EDA - Multivariate Analysis
 
+![2  Multivariate](https://github.com/user-attachments/assets/223f94ca-6e2b-4da3-a11b-03292c625848)
+
 - **Gambar 2a. Analisis Multivariat**:
   Menggunakan _pairplot_ dari _library Seaborn_, terlihat bahwa pola pasangan antar variabel tampak acak. Salah satu pola yang menarik adalah antara **"Size"** dan **"Sweetness"**, di mana terlihat korelasi negatif: semakin kecil ukuran apel, semakin manis rasanya.
+
+  ![2 1 correlation matrix](https://github.com/user-attachments/assets/8515b554-6069-4223-a104-9ddbf2212426)
+
 
 - **Gambar 2b. Matriks Korelasi**:
   Pada matriks korelasi, kita bisa melihat hubungan antar fitur. Sebagai contoh, **"Juiciness"** memiliki korelasi yang cukup tinggi dengan **"Acidity"** sebesar `0.24`, yang menunjukkan adanya hubungan antara kedua variabel tersebut.
@@ -102,7 +129,7 @@ Pada tahap **Data Preparation**, beberapa langkah penting dilakukan untuk memper
 
 ## Tabel 2. Melihat Data Missing Value
 
-Pada proses analisis, kita juga melakukan pengecekan terhadap data _missing value_. Ketika bekerja dengan dataset kompleks, adanya data yang hilang dapat mempengaruhi kinerja model, terutama jika data tersebut signifikan dalam menentukan hasil prediksi. Oleh karena itu, penting untuk mengidentifikasi dan menangani _missing values_ sebelum melanjutkan ke tahap pemodelan.
+Pada proses analisis, pengecekan terhadap data missing value menjadi langkah penting. Kehadiran missing values dalam dataset yang kompleks dapat berdampak signifikan terhadap kinerja model, terutama jika data yang hilang merupakan faktor penting dalam menentukan hasil prediksi. Oleh karena itu, sebelum melanjutkan ke tahap pemodelan, sangat krusial untuk mengidentifikasi dan menangani missing values secara tepat, seperti melalui teknik imputation, penghapusan baris atau kolom yang hilang, atau metode lain yang sesuai dengan sifat data. Penanganan yang baik akan membantu meningkatkan kualitas prediksi model.
 
 ---
 
@@ -132,10 +159,12 @@ Algoritma _Extra Trees Classifier_ adalah salah satu metode _ensemble learning_ 
 ## Evaluation
 
 Dalam tahap evaluasi, metrik utama yang digunakan adalah **accuracy**. Akurasi mengukur sejauh mana prediksi yang dilakukan oleh model sesuai dengan nilai aktual dalam data uji. Rumus untuk menghitung akurasi adalah:
+Dalam tahap evaluasi, metrik utama yang digunakan adalah **accuracy**. Akurasi mengukur sejauh mana prediksi yang dilakukan oleh model sesuai dengan nilai aktual dalam data uji. Rumus untuk menghitung akurasi adalah sebagai berikut:
 
 \[
-\text{Accuracy} = \frac{\text{TP + TN}}{\text{TN + TP + FN + FP}} \times 100\%
+\text{Akurasi} = \frac{\text{Jumlah Prediksi Benar}}{\text{Jumlah Total Data}} \times 100\%
 \]
+
 
 #### Penjelasan:
 - **TP (True Positive)**: Jumlah data positif yang diklasifikasikan dengan benar sebagai positif.
