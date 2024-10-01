@@ -166,15 +166,6 @@ Proses Data Preparation merupakan tahap penting dalam pengembangan model Machine
 3.1 Data Cleaning
 Langkah pertama dalam Data Preparation adalah pembersihan data (Data Cleaning), di mana variabel target, Quality, diubah menjadi variabel biner. Kategori "good" direpresentasikan sebagai 1 dan "bad" sebagai 0. Proses ini penting untuk memfasilitasi pelatihan model dengan data yang konsisten dan relevan. Setelah transformasi ini, data dibagi menjadi dua bagian: fitur independen (X) yang digunakan untuk prediksi, dan variabel target (Y) yang menjadi output dari model.
 
-```
-python
-Salin kode
-df.Quality = (df.Quality == "good").astype(int)  # good:1 , bad:0
-x = df.drop("Quality", axis=1)
-y = df.Quality
-x.shape, y.shape
-```
-
 Setelah pembersihan, bentuk data mencakup 3786 sampel dengan 7 fitur, yang siap untuk tahap selanjutnya.
 
 3.2 Train-Test Split
@@ -192,16 +183,6 @@ Total dataset terdiri dari 3786 sampel, di mana 3028 digunakan sebagai data lati
 
 3.3 Normalisasi
 Langkah berikutnya adalah normalisasi fitur menggunakan MinMaxScaler. Normalisasi dilakukan untuk menskalakan data ke dalam rentang yang sama, yaitu antara 0 dan 1. Hal ini penting untuk mengurangi ketidakseimbangan skala antar fitur dan memastikan bahwa semua fitur berkontribusi secara proporsional dalam proses pelatihan model. Proses normalisasi dilakukan baik pada data latih maupun data uji untuk menjaga konsistensi.
-
-```
-python
-Salin kode
-scaler = MinMaxScaler()
-scaler.fit(x_train)
-x_train = scaler.transform(x_train)
-x_test = scaler.transform(x_test)
-
- ```
 
 Dengan normalisasi ini, seluruh fitur telah diubah ke dalam skala yang seragam, sehingga siap untuk digunakan dalam model prediksi.
 
@@ -314,10 +295,9 @@ Parameter yang digunakan adalah:
 
 Dalam tahap evaluasi, metrik yang digunakan adalah `accuracy`
 Accuracy didapatkan dengan menghitung persentase dari jumlah prediksi yang benar dibagi dengan jumlah seluruh prediksi. Rumus:
- ```
-$$\text{Accuracy} = \frac{\text{TP + TN}}{\text{TN + TP + FN + FP}} \times 100\%$$
 
- ```
+![Rumus Akurasi](https://github.com/user-attachments/assets/c6da82c6-d9d8-44fe-9cb5-bc5bda26abac)
+
 
 *Penjelasan*
 - TP (True Positive): Jumlah data positif yang diprediksi dengan benar sebagai positif.
@@ -330,13 +310,13 @@ Rumus ini memecah akurasi menjadi rasio antara data yang diklasifikasikan dengan
 Berikut hasil accuracy 5 buah model yang latih:
  ```
 
-| Model | Accuracy |
-| ------ | ------ |
-| KNN | 0.90 |
-| RandomForest  | 0.89 |
-| SVM | 0.89 |
-| Naive Bayes | 0.49 |
-| Extra Trees Classifier | 0.90 |
+ Model | Accuracy |
+
+ KNN  0.90 
+ RandomForest 0.89
+ SVM  0.89 
+ Naive Bayes 0.49 
+ Extra Trees Classifier 0.90 
  ```
 
 
