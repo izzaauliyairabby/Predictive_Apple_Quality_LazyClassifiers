@@ -218,7 +218,7 @@ Dengan demikian, kita mendapatkan dimensi data fitur dan label:
 
 Ini akan memberikan informasi tentang ukuran dataset yang digunakan dalam proyek.
 
----
+
 
 ### Train-Test-Split
 
@@ -338,7 +338,8 @@ Berikut hasil accuracy 5 buah model yang latih:
 
 Tabel 3. Hasil Accuracy
 
-![3 1 accuracy](https://github.com/user-attachments/assets/bfc59046-6ebf-447e-9de8-c39036e5bdcd)
+![3  accuracy](https://github.com/user-attachments/assets/6594740c-d55e-4cbd-91fa-8802161d8f3c)
+
 
 
 Gambar 3. Visualisasi Accuracy Model
