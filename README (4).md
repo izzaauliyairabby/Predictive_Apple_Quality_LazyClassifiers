@@ -233,18 +233,18 @@ Rumus ini memecah akurasi menjadi rasio antara data yang diklasifikasikan dengan
 
 Berikut hasil accuracy 5 buah model yang latih:
 
-| Model | Accuracy |
-| ------ | ------ |
-| KNN | 0.90 |
-| RandomForest  | 0.89 |
-| SVM | 0.89 |
-| Naive Bayes | 0.49 |
-| Extra Trees Classifier | 0.90 |
+| Model                   | Akurasi (%) |
+|--------------------------|-------------|
+| K-Nearest Neighbor (KNN)  |  0.9010554089709762    |
+| Random Forest             |0.8720316622691293       |
+| Support Vector Machine    |0.8825857519788918       |
+| Naive Bayes               |0.5092348284960422       |
+| Extra Trees Classifier    |0.8601583113456465       |
 
 
 Tabel 3. Hasil Accuracy
 
-![Plot Accuracy](https://i.ibb.co/wMPKmm4/akhirkata.png)
+![plot evaluasi](https://github.com/user-attachments/assets/950660ca-6bed-475e-99b2-8394ceb8225c)
 
 Gambar 3. Visualisasi Accuracy Model
 
