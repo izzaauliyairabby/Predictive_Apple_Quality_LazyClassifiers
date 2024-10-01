@@ -344,6 +344,12 @@ Tabel 3. Hasil Accuracy
 
 ![3  accuracy](https://github.com/user-attachments/assets/6594740c-d55e-4cbd-91fa-8802161d8f3c)
 
+### Akurasi 5 Model Pilihan
+
+![3 1 accuracy](https://github.com/user-attachments/assets/dc0cf76d-5c9c-4659-a5af-8ef0fbc2b9ac)
+
+
+
 Gambar 3. Visualisasi Accuracy Model
 
 Dilihat dari _Tabel 3. Hasil Accuracy_ dan _Gambar 3. Visualisasi Accuracy Model_ tersebut dapat diketahui bahwa model dengan algoritma _KNN_ memiliki Accuracy yang lebih tinggi dengan accuracy `90%` . Untuk itu model tersebut yang akan dipilih untuk digunakan. Diharapkan dengan model yang telah dikembangan dapat memprediksi kualitas apel dengan baik menggunakan _K-Nearest Neighbors (KNN)_. Alasan mengapa metode _KNN_ yang dipilih karena _KNN_ adalah algoritma yang sangat sederhana dibandingkan dengan _Extra Trees Classifier_. Hal ini membuatnya lebih mudah untuk dipahami, diimplementasikan, dan diinterpretasikan. _KNN_ juga tidak memiliki banyak parameter yang perlu dioptimalkan, sehingga lebih mudah untuk digunakan.
