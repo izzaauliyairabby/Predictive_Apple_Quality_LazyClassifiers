@@ -127,15 +127,9 @@ Dari ke 9 fitur dapat dilihat bahwa fitur `A_id` tidak mempengaruhi kualitas bua
 
 ### EDA - Univariate Analysis
 
-![Analisis Univariat (Data Kategori)](https://i.ibb.co/0MRrJCC/jumlah-kualitas-datasets.png)
+![1  Univariate](https://github.com/user-attachments/assets/242843e4-4e55-4332-b0e4-be9ef5636313)
 
-Gambar 1a. Analisis Univariat (Data Kategori) 
-
-![Univariate Analysis](https://i.ibb.co/V2mQ2dK/EDA-Univariate.png)
-
-Gambar 1b. Analisis Univariat (Data Numerik) 
-
- Berdasarkan _Gambar 1a_ , dapat dilihat bahwa distribusi data katagorik _Quality_ yang terdiri dari _good_ dan _bad_ kualitas apel, yang mana nilai data **bad** terdiri dari `1928` dan **good** terdiri dari `1862`, yang mana menunjukan perbandingan data yang tidak terlalu jauh. Pada _Gambar 1b,_ untuk data numerik memiliki karakteristik, yaitu:
+ Berdasarkan diatas, dapat dilihat bahwa distribusi data katagorik _Quality_ yang terdiri dari _good_ dan _bad_ kualitas apel, yang mana nilai data **bad** terdiri dari `1928` dan **good** terdiri dari `1862`, yang mana menunjukan perbandingan data yang tidak terlalu jauh. Pada _Gambar 1b,_ untuk data numerik memiliki karakteristik, yaitu:
   - Dilihat dari distribusi data numerik _Size_, ukuran rata-rata buah berkisar dari -2 sampai 2, dan memiliki nilai rata-rata _Mean_ adalah -0.51.
   - Rata-rata berat apel bernilai -0.99 dan nilai _max_ berat apel adalah 3.08.
   - Rata-rata tingkat kemanisan apel -0.48.
@@ -153,13 +147,12 @@ Pada kasus ini, rata-rata (mean) data "Size" adalah -0.51 dan standar deviasi da
 
 ### EDA - Multivariate Analysis
 
-![Multivariate Analysis](https://i.ibb.co/yNHmpNZ/EDA-MULTIVARIATE.png)
+![2  Multivariate](https://github.com/user-attachments/assets/e4ccce5c-d704-430b-9db4-92419152443b)
 
 
 Gambar 2a. Analisis Multivariat
 
-![Multivariate Analysis](https://i.ibb.co/WBQ5gPy/Matrix-corelasi.png)
-
+![2 1 correlation matrix](https://github.com/user-attachments/assets/0e413d5c-343a-4af7-9975-f3ff7c4907e8)
 
 Gambar 2b. Analisis Matriks Korelasi
 
@@ -167,9 +160,48 @@ Pada _Gambar 2a. Analisis Multivariat_, dengan menggunakan fungsi _pairplot_ dar
 Pada _Gambar 2b. Analisis Matriks Korelasi_, merupakan _Correlation Matrix_ menunjukkan hubungan antar fitur dalam nilai korelasi. Jika diamati, fitur _Juiciness_ memiliki skor korelasi yang cukup besar `0.24` dengan fitur target _Acidity_ .
 
 ## Data Preparation
-Berikut adalah penjelasan yang lebih holistik mengenai proses _data cleaning_, _train-test split_, dan _normalisasi_ dalam proyek ini. Penjelasan ini cocok untuk disertakan dalam file **Markdown (MD)** dengan struktur yang terorganisir.
+3. Data Preparation
+Proses Data Preparation merupakan tahap penting dalam pengembangan model Machine Learning, yang bertujuan untuk menyiapkan data secara optimal untuk pelatihan model. Pada tahap ini, dilakukan berbagai kegiatan seperti pembersihan data, penanganan data yang hilang, pengkodean variabel kategorikal, serta normalisasi atau standarisasi fitur. Penyiapan data yang baik dapat meningkatkan performa model dalam hal akurasi, presisi, serta ketepatan prediksi. Langkah-langkah dalam proses ini mencakup data cleaning, pembagian data latih dan uji, serta normalisasi fitur.
 
----
+3.1 Data Cleaning
+Langkah pertama dalam Data Preparation adalah pembersihan data (Data Cleaning), di mana variabel target, Quality, diubah menjadi variabel biner. Kategori "good" direpresentasikan sebagai 1 dan "bad" sebagai 0. Proses ini penting untuk memfasilitasi pelatihan model dengan data yang konsisten dan relevan. Setelah transformasi ini, data dibagi menjadi dua bagian: fitur independen (X) yang digunakan untuk prediksi, dan variabel target (Y) yang menjadi output dari model.
+
+```
+python
+Salin kode
+df.Quality = (df.Quality == "good").astype(int)  # good:1 , bad:0
+x = df.drop("Quality", axis=1)
+y = df.Quality
+x.shape, y.shape
+```
+
+Setelah pembersihan, bentuk data mencakup 3786 sampel dengan 7 fitur, yang siap untuk tahap selanjutnya.
+
+3.2 Train-Test Split
+Untuk mengevaluasi kinerja model secara objektif, data dipecah menjadi data latih dan data uji menggunakan metode train-test split. Data latih digunakan untuk melatih model, sedangkan data uji digunakan untuk menguji kinerja model pada data yang belum pernah dilihat sebelumnya. Pada proses ini, data dibagi dengan rasio 80:20, di mana 3028 sampel digunakan untuk pelatihan dan 758 sampel untuk pengujian. Pemisahan ini dilakukan secara acak dengan menggunakan random state untuk memastikan reprodusibilitas hasil.
+
+```
+python
+Salin kode
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=60)
+print(f'Total datasets: {len(x)}')
+print(f'Total data Latih: {len(x_train)}')
+print(f'Total data Uji: {len(x_test)}')
+```
+Total dataset terdiri dari 3786 sampel, di mana 3028 digunakan sebagai data latih dan 758 sebagai data uji.
+
+3.3 Normalisasi
+Langkah berikutnya adalah normalisasi fitur menggunakan MinMaxScaler. Normalisasi dilakukan untuk menskalakan data ke dalam rentang yang sama, yaitu antara 0 dan 1. Hal ini penting untuk mengurangi ketidakseimbangan skala antar fitur dan memastikan bahwa semua fitur berkontribusi secara proporsional dalam proses pelatihan model. Proses normalisasi dilakukan baik pada data latih maupun data uji untuk menjaga konsistensi.
+
+```
+python
+Salin kode
+scaler = MinMaxScaler()
+scaler.fit(x_train)
+x_train = scaler.transform(x_train)
+x_test = scaler.transform(x_test) ```
+
+Dengan normalisasi ini, seluruh fitur telah diubah ke dalam skala yang seragam, sehingga siap untuk digunakan dalam model prediksi.
 
 ### Data Cleaning
 
@@ -306,7 +338,8 @@ Berikut hasil accuracy 5 buah model yang latih:
 
 Tabel 3. Hasil Accuracy
 
-![Plot Accuracy](https://i.ibb.co/wMPKmm4/akhirkata.png)
+![3 1 accuracy](https://github.com/user-attachments/assets/bfc59046-6ebf-447e-9de8-c39036e5bdcd)
+
 
 Gambar 3. Visualisasi Accuracy Model
 
