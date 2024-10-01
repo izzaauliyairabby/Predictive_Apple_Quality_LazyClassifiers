@@ -73,6 +73,7 @@ Data columns (total 8 columns):
  5   Ripeness     4000 non-null   float64
  6   Acidity      4000 non-null   float64
  7   Quality      4000 non-null   object 
+ 
 dtypes: float64(7), object(1)
 memory usage: 281.2+ KB
 Dapat kita lihat:
@@ -86,10 +87,6 @@ Pada proses _Data Cleaning_ yang dilakukan adalah seperti:
 - Converting Column Type (Mengubah tipe suatu kolom).
 - Train Test Split (membagi data menjadi data latih dan data uji).
 - Normalization (mentransformasi data ke dalam skala yang seragam sehingga semua fitur atau atribut memiliki rentang nilai yang sebanding).
-
-| A_id | Size | Weight | Sweetness | Crunchiness | Juiciness | Ripeness | Acidity | Quality |
-| ------ | ------ |------ | ------ | ------ | ------ |------ | ------ |------ |
-| NaN | NaN | NaN | NaN |NaN | NaN| NaN	| Created_by_Nidula_Elgiriyewithana  | NaN |
 
 
 Tabel 2. Melihat data missing value
