@@ -112,6 +112,7 @@ Dilihat dari _Tabel 1. EDA Deskripsi Variabel_ dataset ini telah di *bersihkan* 
 - Dataset memiliki 4001 sample dengan 9 fitur.
 - Dataset memiliki 7 fitur bertipe float64 dan 2 fitur bertipe object.
 - Terdapat 1 missing value dalam dataset.
+- 
 ### Variable - variable pada dataset
 - `A_id` : Identifikasi unik untuk setiap buah.
 - `Size` : Ukuran buah.
@@ -171,14 +172,6 @@ Setelah pembersihan, bentuk data mencakup 3786 sampel dengan 7 fitur, yang siap 
 3.2 Train-Test Split
 Untuk mengevaluasi kinerja model secara objektif, data dipecah menjadi data latih dan data uji menggunakan metode train-test split. Data latih digunakan untuk melatih model, sedangkan data uji digunakan untuk menguji kinerja model pada data yang belum pernah dilihat sebelumnya. Pada proses ini, data dibagi dengan rasio 80:20, di mana 3028 sampel digunakan untuk pelatihan dan 758 sampel untuk pengujian. Pemisahan ini dilakukan secara acak dengan menggunakan random state untuk memastikan reprodusibilitas hasil.
 
-```
-python
-Salin kode
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=60)
-print(f'Total datasets: {len(x)}')
-print(f'Total data Latih: {len(x_train)}')
-print(f'Total data Uji: {len(x_test)}')
-```
 Total dataset terdiri dari 3786 sampel, di mana 3028 digunakan sebagai data latih dan 758 sebagai data uji.
 
 3.3 Normalisasi
