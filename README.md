@@ -21,24 +21,18 @@ Tujuan dari proyek ini meliputi:
 - Mengembangkan aplikasi yang mudah digunakan oleh petani dan distributor, yang memungkinkan mereka memanfaatkan model machine learning untuk memprediksi kualitas apel.
 
 ### Solution Statements
-- **Menganalisis Data**: Langkah awal yang akan diambil adalah melakukan analisis univariat dan multivariat untuk memahami data secara lebih dalam. Analisis ini mencakup pemahaman statistik dasar, visualisasi data, serta identifikasi pola dan hubungan antar fitur melalui korelasi matriks. Deteksi outlier juga dilakukan untuk menjaga kualitas data.
-- **Proses Data Cleaning dan Normalisasi**: Proses ini melibatkan pembersihan data dari nilai-nilai yang hilang atau anomali serta normalisasi agar data lebih siap digunakan dalam model prediksi yang akurat.
-- **Pengembangan Model Machine Learning**: Beberapa variasi model akan dibuat untuk mencari model yang paling efektif dalam memprediksi kualitas apel. Model yang akan diujicobakan antara lain:
-
-    * **K-Nearest Neighbor (KNN)**: Algoritma sederhana yang mengklasifikasikan data baru berdasarkan kemiripan dengan data terdekatnya. KNN digunakan untuk mengklasifikasikan titik data berdasarkan tetangga terdekat sebagai acuan.[[4](https://towardsdatascience.com/a-simple-introduction-to-k-nearest-neighbors-algorithm-b3519ed98e)]
-    
-    * **Random Forest**: Algoritma ensemble yang menggabungkan prediksi dari banyak decision tree kecil untuk menghasilkan prediksi yang lebih akurat. Random Forest sangat baik untuk tugas klasifikasi maupun regresi.[[5](https://deepai.org/machine-learning-glossary-and-terms/random-forest)]
-    
-    * **Support Vector Machine (SVM)**: Algoritma yang mencari hyperplane dalam ruang multidimensi untuk secara jelas mengklasifikasikan data. SVM cocok untuk tugas klasifikasi, regresi, dan deteksi outlier.[[6](https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47)]
-    
-    * **Naive Bayes**: Model probabilistik berbasis teorema Bayes yang cocok untuk klasifikasi. Meskipun sederhana, Naive Bayes sering memberikan hasil yang baik untuk data yang berstruktur sederhana.[[7](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)]
-    
-    * **Extra Trees Classifier**: Algoritma ensemble yang menggunakan banyak pohon keputusan yang belum dipangkas dari data pelatihan. Prediksi dibuat dengan merata-ratakan hasil dari pohon-pohon tersebut dalam kasus regresi atau voting mayoritas untuk klasifikasi.[[8](https://machinelearningmastery.com/extra-trees-ensemble-with-python/)] 
+Menganalisis data dengan melakukan univariate analysis dan multivariate analysis. Memahami data juga dapat dilakukan dengan visualisasi. Memahami data dapat membantu untuk mengetahui kolerasi matrix antar fitur dan mendeteksi outlier.
+Melakukan proses data cleaning dan normalisai data agar mendapat prediksi yang baik.
+Membuat beberapa variasi model untuk mendapatkan model yang paling baik dari beberapa model yang telah dibuat untuk prediksi kualitas apel. Diantaranya adalah menggunakan:
+K-Nearest Neighbor (KNN) adalah algoritma sederhana yang mengklasifikasikan data atau kasus baru berdasarkan ukuran kesamaan. Hal ini sebagian besar digunakan untuk mengklasifikasikan titik data berdasarkan tetangga terdekatnya sebagai acuan.[4]
+Random Forest adalah algoritma machine learning yang kuat yang dapat digunakan untuk berbagai tugas termasuk regresi dan klasifikasi. Ini adalah metode ensemble, yang berarti bahwa model random forest terdiri dari banyak decision tree kecil, yang disebut estimator, yang masing-masing menghasilkan prediksi mereka sendiri. Random forest menggabungkan prediksi estimator untuk menghasilkan prediksi yang lebih akurat .[5]
+Support Vector Machine (SVM) adalah algoritma yang digunakan untuk menemukan hyperplane dalam ruang N-dimensi (N - jumlah fitur) yang secara jelas mengklasifikasikan titik data. SVM dapat digunakan untuk menyelesaikan permasalahan klasifikasi, regresi, dan pendeteksian outlier.[6]
+Naive Bayes adalah model machine learning probabilistik yang digunakan untuk tugas klasifikasi. Inti dari classifier ini didasarkan pada teorema Bayes.[7]
+Extra trees classifier adalah sejumlah besar pohon keputusan yang belum dipangkas dari kumpulan data pelatihan. Prediksi dibuat dengan merata-ratakan prediksi pohon keputusan dalam kasus regresi atau menggunakan suara terbanyak dalam kasus klasifikasi.[8]
 
 Melalui pendekatan ini, model dengan akurasi terbaik akan dipilih untuk memprediksi kualitas apel dengan lebih efektif.
 
 ## Data Understanding
-### EDA - Deskripsi Variabel
 **Informasi Datasets**
 
 | Jenis        | Keterangan                                                                                  |
