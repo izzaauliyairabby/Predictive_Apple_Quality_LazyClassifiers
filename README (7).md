@@ -1,13 +1,13 @@
-# Laporan Proyek Machine Learning - Ahmad Wandi
+# Laporan Proyek Machine Learning - Izza Auliyai Rabby
 ## Domain Proyek
 Domain yang dipilih untuk proyek *machine learning* ini adalah **Pertanian**, dengan judul **Predictive Analytics: Kualitas Apel**  
 
 ### Latar Belakang
 
-![foto apel](https://i.ibb.co/GWr1G0Q/dataset-cover-1.jpg)
 
-Indonesia merupakan salah satu negara penghasil apel terbesar di Asia Tenggara, dengan produksi mencapai 1,2 juta ton per tahun. Apel menjadi komoditas penting bagi petani dan berkontribusi pada ekonomi nasional.[[1](https://dataindonesia.id/agribisnis-kehutanan/detail/produksi-apel-indonesia-sebanyak-509544-ton-pada-2021)]  Salah satu tantangan utama dalam industri apel adalah menjaga kualitas produk. Kualitas apel dapat menurun akibat berbagai faktor, seperti ukuran yang kecil, tingkat kematangan, dan kerenyahan buah. Penurunan kualitas apel dapat menyebabkan kerugian ekonomi bagi petani dan distributor. [[2](https://hostjournals.com/bulletincsr/article/view/251)] 
-Penerapan _predictive analytics_ dalam industri apel dapat memberikan manfaat bagi petani, distributor, dan konsumen. Petani dapat meningkatkan keuntungan dengan meningkatkan kualitas dan hasil panen apel. Distributor dapat mengurangi kerugian dan meningkatkan efisiensi rantai pasokan. Konsumen mendapatkan apel dengan kualitas yang lebih baik dan harga yang lebih stabi[[3](https://doi.org/10.47065/bulletincsr.v3i3.251)]
+Indonesia adalah salah satu negara dengan produksi apel terbesar di Asia Tenggara, mencapai 1,2 juta ton per tahun. Apel merupakan komoditas penting bagi petani dan berperan dalam ekonomi nasional. [[1](https://dataindonesia.id/agribisnis-kehutanan/detail/produksi-apel-indonesia-sebanyak-509544-ton-pada-2021)] Salah satu tantangan terbesar dalam industri apel adalah mempertahankan kualitas produk. Kualitas apel dapat menurun karena berbagai faktor, seperti ukuran, kematangan, dan tekstur. Penurunan kualitas ini bisa berdampak pada kerugian ekonomi bagi petani dan distributor. [[2](https://hostjournals.com/bulletincsr/article/view/251)] 
+
+Penerapan _predictive analytics_ dalam industri apel dapat memberi manfaat bagi petani, distributor, dan konsumen. Petani dapat meningkatkan keuntungan dengan menghasilkan apel berkualitas lebih baik. Distributor dapat mengurangi kerugian serta meningkatkan efisiensi rantai pasokan. Sementara itu, konsumen dapat menikmati apel berkualitas tinggi dengan harga yang lebih stabil. [[3](https://doi.org/10.47065/bulletincsr.v3i3.251)]
 
 ## Business Understanding
 Pengembangan model prediksi kualitas apel memiliki potensi untuk memberikan manfaat bagi berbagai pihak, termasuk petani, distributor. Model ini dapat membantu meningkatkan kualitas panen apel, meningkatkan nilai jual apel, dan meningkatkan kepercayaan konsumen. Contoh potensi manfaat hasil prediksi kualitas apel yang akurat dapat membantu petani dalam melakukan pemilahan dan dapat menentukan harga jual buah kedepan untuk kedepannya.
@@ -85,7 +85,7 @@ Dari ke 9 fitur dapat dilihat bahwa fitur `A_id` tidak mempengaruhi kualitas bua
 
 Gambar 1a. Analisis Univariat (Data Kategori) 
 
-![Univariate Analysis](https://i.ibb.co/V2mQ2dK/EDA-Univariate.png)
+![1  Univariate](https://github.com/user-attachments/assets/242843e4-4e55-4332-b0e4-be9ef5636313)
 
 Gambar 1b. Analisis Univariat (Data Numerik) 
 
@@ -109,12 +109,12 @@ Pada kasus ini, rata-rata (mean) data "Size" adalah -0.51 dan standar deviasi da
 
 ### EDA - Multivariate Analysis
 
-![Multivariate Analysis](https://i.ibb.co/yNHmpNZ/EDA-MULTIVARIATE.png)
+![2  Multivariate](https://github.com/user-attachments/assets/e4ccce5c-d704-430b-9db4-92419152443b)
 
 
 Gambar 2a. Analisis Multivariat
 
-![Multivariate Analysis](https://i.ibb.co/WBQ5gPy/Matrix-corelasi.png)
+![2 1 correlation matrix](https://github.com/user-attachments/assets/0e413d5c-343a-4af7-9975-f3ff7c4907e8)
 
 
 Gambar 2b. Analisis Matriks Korelasi
@@ -123,11 +123,13 @@ Pada _Gambar 2a. Analisis Multivariat_, dengan menggunakan fungsi _pairplot_ dar
 Pada _Gambar 2b. Analisis Matriks Korelasi_, merupakan _Correlation Matrix_ menunjukkan hubungan antar fitur dalam nilai korelasi. Jika diamati, fitur _Juiciness_ memiliki skor korelasi yang cukup besar `0.24` dengan fitur target _Acidity_ .
 ## Data Preparation
 Pada proses _Data Preparation_ dilakukan kegiatan seperti _Data Gathering_, _Data Assessing_, dan _Data Cleaning_. Pada proses Data Gathering, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan dataframe Pandas. Untuk proses Data Assessing, berikut adalah beberapa pengecekan yang dilakukan:
-- Duplicate data (data yang serupa dengan data lainnya).
+
 - Missing value (data atau informasi yang "hilang" atau tidak tersedia)
 - Outlier (data yang menyimpang dari rata-rata sekumpulan data yang ada).
 
 Pada proses _Data Cleaning_ yang dilakukan adalah seperti:
+- Menghapus Data Duplikat
+- Identifikasi Outliers dan Memperbaikinya
 - Converting Column Type (Mengubah tipe suatu kolom).
 - Train Test Split (membagi data menjadi data latih dan data uji).
 - Normalization (mentransformasi data ke dalam skala yang seragam sehingga semua fitur atau atribut memiliki rentang nilai yang sebanding).
@@ -250,7 +252,7 @@ Tabel 3. Hasil Accuracy
 
 Gambar 3. Visualisasi Accuracy Model
 
-Dilihat dari _Tabel 3. Hasil Accuracy_ dan _Gambar 3. Visualisasi Accuracy Model_ tersebut dapat diketahui bahwa model dengan algoritma _KNN_ memiliki Accuracy yang lebih tinggi dengan accuracy `90%` . Untuk itu model tersebut yang akan dipilih untuk digunakan. Diharapkan dengan model yang telah dikembangan dapat memprediksi kualitas apel dengan baik menggunakan _K-Nearest Neighbors (KNN)_. Alasan mengapa metode _KNN_ yang dipilih karena _KNN_ adalah algoritma yang sangat sederhana dibandingkan dengan _Extra Trees Classifier_. Hal ini membuatnya lebih mudah untuk dipahami, diimplementasikan, dan diinterpretasikan. _KNN_ juga tidak memiliki banyak parameter yang perlu dioptimalkan, sehingga lebih mudah untuk digunakan.
+Berdasarkan _Tabel 3. Hasil Accuracy_ dan _Gambar 3. Visualisasi Accuracy Model_, dapat dilihat bahwa algoritma _KNN_ memiliki tingkat akurasi yang lebih tinggi, yaitu sebesar `90%`. Oleh karena itu, model ini dipilih untuk digunakan. Diharapkan model yang dikembangkan dengan _K-Nearest Neighbors (KNN)_ mampu memprediksi kualitas apel dengan baik. Alasan pemilihan metode _KNN_ adalah karena algoritma ini sangat sederhana dibandingkan dengan _Extra Trees Classifier_. Kesederhanaan tersebut membuat _KNN_ lebih mudah dipahami, diimplementasikan, dan diinterpretasikan. Selain itu, _KNN_ juga tidak memerlukan banyak parameter yang perlu dioptimalkan, sehingga lebih praktis untuk digunakan.
 
 
 
